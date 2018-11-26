@@ -55,14 +55,12 @@ ul {
     padding: 0
 }
 
-a,
-a:visited,
-a:focus,
-a:active,
-a:hover {
-    text-decoration: none;
-    outline: none;
+a {
+    color: #000000;
+
 }
+
+
 
 a,
 button {
@@ -72,9 +70,9 @@ button {
     transition: all 0.3s ease-in-out;
 }
 
-a {
-    color: #ffffff;
-}
+
+
+
 
 h1,
 h2,
@@ -90,9 +88,9 @@ h1,
 }
 
 h1 {
-    font-size: 60px;
-    color: #1a243e;
-    font-weight: 600;
+    font-size: 55px;
+    color: #090211;
+    font-weight: 500;
     font-family: 'Exo', sans-serif;
 }
 
@@ -105,7 +103,7 @@ h2 {
 
 h3 {
     font-size: 22px;
-    color: #ff7f00;
+    color: #000;
 }
 
 h4 {
@@ -229,6 +227,346 @@ button {
 4. Main Menu Area Start
 ===================================================*/
 
+// Navigation Variables
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #0e0e0e;
+$nav-font-color: #ffffff;
+$link-hover-color: #2582dd;
+
+// Outer navigation wrapper
+.navigation {
+  height: $nav-height;
+  background: $nav-background;
+}
+
+// Logo and branding
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: $nav-height;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  a,
+  a:visited {
+    color: $nav-font-color;
+    text-decoration: none;
+  }
+}
+
+// Container with no padding for navbar
+.nav-container {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+// Navigation
+nav {
+  float: right;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      position: relative;
+      a,
+      a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        background: $nav-background;
+        color: $nav-font-color;
+        text-decoration: none;
+        &:hover {
+          background: $link-hover-color;
+          color: $nav-font-color;
+        }
+        &:not(:only-child):after {
+          padding-left: 4px;
+          content: ' ▾';
+        }
+      } // Dropdown list
+      ul li {
+        min-width: 190px;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Dropdown list binds to JS toggle event
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+
+// Binds to JS Toggle
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #0e0e0e;
+  height: $nav-height;
+  width: $nav-height;
+}
+@media only screen and (max-width: 798px) {
+  // Hamburger nav visible on mobile only
+  .nav-mobile {
+    display: block;
+  }
+  nav {
+   width: 100%;
+    padding: $nav-height 0 15px;
+    ul {
+      display: none;
+      li {
+        float: none;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        ul li a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: $breakpoint) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: transparent;
+    &:before,
+    &:after {
+      top: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Page content
+article {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+/*======
+break
+========*/
+
+@charset "UTF-8";
+.navigation {
+  height: 70px;
+  background: #0e0e0e;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #0e0e0e;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #2581DC;
+  color: #ffffff;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #0e0e0e;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 10px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+/* ================================================
+4. Main Menu Area Start
+===================================================*/
+
 .support-bar-area {
   display: none;
 }
@@ -238,19 +576,19 @@ header.header {
     top: 0;
     left: 0;
     z-index: 999;
-    background: #ff7f00;
+    background: #0e0e0e;
     width: 100%;
-    padding: 10px 0px 10px;
+    padding: 10 0px 30px;
     border-bottom: 0px solid rgba(255, 255, 255, 0.25);
 
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(225, 225, 225, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    color: #0e0e0e
 }
 
 .navbar-light .navbar-toggler:focus {
-    color: #000000;
+    color: #0e0e0e;
     outline: 0px;
 }
 
@@ -267,13 +605,13 @@ header.header {
     left: 0;
     width: 100%;
     z-index: 9999;
-    background: #131313;
+    background: #0e0e0e;
     border-bottom: 0px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 #mainHeader.header .nav-link {
-    color: #ffffff;
+    color: #004fff;
     font-size: 15px;
     margin-right: 10px;
     text-transform: uppercase;
@@ -287,7 +625,7 @@ header.header {
 }
 
 #mainHeader.header .nav-link:hover {
-    color: #272727;
+    color: #0075ff;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
@@ -299,7 +637,7 @@ header.header {
 }
 
 #mainHeader .navbar-light .navbar-toggler {
-    color: #ff7f00;
+    color: #0e0e0e;
     border: 0px;
 }
 
@@ -375,7 +713,7 @@ Main Menu Area Start
 }
 
 #welcomeArea .topcontent a:hover {
-    color: #131313;
+    color: #006eff;
 
 }
 
@@ -513,7 +851,7 @@ About Area End
 
 #transaction {
 
-    background: #ffffff url(../img/sectionbg.png) no-repeat center;
+    background: #ff7f00;
     padding: 25px 0px 50px;
 }
 
@@ -524,7 +862,7 @@ About Area End
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 0px solid #ffffff;
+    border-bottom: 2px solid #4a00ff;
 }
 
 .table tr th {
@@ -532,7 +870,7 @@ About Area End
     font-weight: 500;
     font-size: 22px;
     text-transform: uppercase;
-    padding: 26px 11px 26px;
+    padding: 5px 6px 5px;
     text-align: left;
 }
 
@@ -541,21 +879,21 @@ About Area End
 }
 
 .table tr td {
-    color: #fff;
+    color: #000;
     font-weight: 400;
     font-size: 16px;
     text-align: left;
-    padding: 20px 0px 0px 12px;
+    padding: 10px 0px 0px 12px;
 }
 
 thead {
     background: #ff7f00;
-    padding: 0px 10px;
+    padding: 0px 5px;
 }
 
 .tab-content {
     border-radius: 10px;
-    background: #ff7f00;
+    background: #d0dcf4;
     position: relative;
 }
 
@@ -567,7 +905,7 @@ thead {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ff7f00;
+    background: #00e010;
     z-index: -1;
     border-radius: 10px;
 }
@@ -580,7 +918,7 @@ thead {
 }
 
 .table .media p {
-    color: #fff;
+    color: #000;
     font-weight: 400;
     font-size: 16px;
 }
@@ -609,7 +947,7 @@ thead {
 }
 
 .tab1 ul li a {
-    width: 200px;
+    width: 20px;
     height: 56px;
     border-radius: 0px !important;
     border: 0px;
@@ -629,7 +967,7 @@ thead {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #131313;
+    color: #000;
     line-height: 45px;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -638,7 +976,7 @@ thead {
 }
 
 .tab1 .nav-pills .nav-link.active p {
-    color: #fff;
+    color: #4a00ff;
 }
 
 
@@ -663,8 +1001,7 @@ Transaction Area End
 13. Investors Area Start
 =================================================*/
 #investors {
-background:  url(../img/featurebg.png)no-repeat center;
-    padding: 100px 0px 130px;
+background: #000000;
 }
 
 #investors .heading-title h2 {
@@ -1675,7 +2012,7 @@ Footer Area End
     background: #ff7f00;
     color: #fff;
     display: block;
-    font-size: 16px;
+    font-size: 40px;
     border-radius: 50%;
     width: 45px;
     height: 45px;
@@ -1690,6 +2027,6 @@ Footer Area End
 }
 
 .totop>a:hover {
-    background: #ffffff;
-    color: #ff7f00;
+    background: #FF4D00;
+    color: #000;
 }

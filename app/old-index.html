@@ -15,16 +15,14 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			color: #4a00ff;
-			text-decoration-color: #00e010;
-			background-color: #4a00ff;
+			background-color: #dddddd;
 	}
 	#fundraiser-progress-bar {
 			width: 0%;
 			height: 45px;
 			line-height: 45px; /* center text vertically; should match height */
-			background-color: #00e010;
-			color: #4a00ff;
+			background-color: #002059;
+			color: white;
 	}
 	</style>
 	<meta charset="utf-8">
@@ -51,62 +49,43 @@
 	<!-- Main Menu Area Start -->
 	<header id="mainHeader" class="header">
 		<!-- Start Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-light p-0">
+			<div class="container">
+				<a class="navbar-brand" href="#welcomeArea">
+					<img width=75 height=75 src="app/assets/img/logo.png">   0xBitcoin
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">What is 0xBTC?</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Links</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Foundation </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Exchanges</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#footer">Contact</a>
+						</li>
+					</ul>
+					<div class="viewPlan">
 
-	  <section class="navigation">
-  <div class="nav-container">
-    <div class="navbar-brand">
-			<a class="navbar-brand" href="#welcomeArea">
-				<img width=75 height=75 src="app/assets/img/logo.png">   0xBitcoin
-			</a>
-    </div>
-    <nav>
-      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-      <ul class="nav-list">
-        <li>
-          <a href="#!">Home</a>
-        </li>
-        <li>
-          <a href="#!">About</a>
-        </li>
-        <li>
-          <a href="#!">Services</a>
-          <ul class="nav-dropdown">
-            <li>
-              <a href="#!">Web Design</a>
-            </li>
-            <li>
-              <a href="#!">Web Development</a>
-            </li>
-            <li>
-              <a href="#!">Graphic Design</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#!">Pricing</a>
-        </li>
-        <li>
-          <a href="#!">Portfolio</a>
-          <ul class="nav-dropdown">
-            <li>
-              <a href="#!">Web Design</a>
-            </li>
-            <li>
-              <a href="#!">Web Development</a>
-            </li>
-            <li>
-              <a href="#!">Graphic Design</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#!">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</section>
+					</div>
+				</div>
+			</div>
+		</nav>
 		<!-- End Navigation -->
 		<div class="clearfix"></div>
 	</header>
@@ -219,9 +198,9 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8 text-center">
 					<div class="heading-title">
-						<h1>
-							0xBTC Token Stats
-						</h1>
+						<h3>
+							Stats
+						</h3>
 
 					</div>
 				</div>
@@ -263,11 +242,11 @@
 											</table>
 										</div>
 										<div class="col-md my-3">
-											<canvas id="chart-hashrate" style="width:765px;height:24em;"></canvas>
+											<canvas id="chart-hashrate" style="width:100%;height:10em;"></canvas>
 										</div>
 									</div>
-									<!-- Transaction Area End	<table class="table">
-									 	<tbody>
+									<table class="table">
+										<tbody>
 											<tr align=center>
 												<br>
 												<h4>ETH Progress Bar</h4><p>
@@ -288,7 +267,7 @@
 												CCN FUNDRAISER
 											</tr>
 										</tbody>
-									</table> -->
+									</table>
 								</div>
 							</div>
 						</div>
@@ -1079,7 +1058,7 @@
 
 	<!--Start ClickToTop-->
 	<div class="totop">
-		<a id="totop" href="#top"><i class="fa fa-angle-up"></i></a>
+		<a href="#top"><i class="fa fa-arrow-up"></i></a>
 	</div>
 	<!--End ClickToTop-->
 

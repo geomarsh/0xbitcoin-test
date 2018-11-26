@@ -5,23 +5,23 @@ call showHashrateGraph(...) to apply graph to canvas with ID 'chart-hashrate'
 NOTE: assumes mineable_token vue exists in the global scope
  */
 
-const Chart = require('./chart.min');  
+const Chart = require('./chart.min');
 const Eth = require('./ethjs');
 
 /* color of the fonts used in chart labels */
-Chart.defaults.global.defaultFontColor = '#ffffff';
+Chart.defaults.global.defaultFontColor = '#6100ff';
 Chart.defaults.global.hover.mode = 'nearest';
 /* color of thehashrate line */
-let chart_line_border_color = '#ffc287';
+let chart_line_border_color = '#00ff03';
 /* color of the fill under hashrate line */
-let chart_line_background_color = '#ffab58';
+let chart_line_background_color = '#c3ffce';
 /* color of the chart gridlines */
-let gridline_color = '#ffffff';
+let gridline_color = '#e300ff';
 /* color of the first chart gridline */
-let gridline_zero_color = '#ffffff';
+let gridline_zero_color = '#e0a5fe';
 /* axis label options */
-let y_axis_label_color = '#ffffff';
-let axis_label_font_size = 13;
+let y_axis_label_color = '#cc66ff';
+let axis_label_font_size = 14;
 
 
 /* intrinsic values */
@@ -97,11 +97,11 @@ function toReadableHashrateForLogScale(hashrate, should_add_b_tags) {
   return hashrate_string + ' ' + final_unit + ' ';
 }
 
-/* 
+/*
     Function generator. Takes the most recent eth block and returns a function
     which can be used to convert eth blocks to date strings.
 
-    Use it (and current time) to guess timestamp of a given past eth block. 
+    Use it (and current time) to guess timestamp of a given past eth block.
     Value is returned as a formatted date/time string.
  */
 function createEthDateFunction(current_eth_block) {
