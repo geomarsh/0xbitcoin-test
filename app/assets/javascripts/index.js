@@ -8,7 +8,6 @@ const Vue = require('vue');
 //const Popper = require('./template/popper');
 
 
-
 const bootstrap = require('./template/bootstrap.min');
 const main = require('./template/main');
 

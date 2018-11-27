@@ -12,13 +12,13 @@ const Eth = require('./ethjs');
 Chart.defaults.global.defaultFontColor = '#6100ff';
 Chart.defaults.global.hover.mode = 'nearest';
 /* color of thehashrate line */
-let chart_line_border_color = '#00ff03';
+let chart_line_border_color = '#00ff75';
 /* color of the fill under hashrate line */
-let chart_line_background_color = '#c3ffce';
+let chart_line_background_color = '#e0ffd4';
 /* color of the chart gridlines */
-let gridline_color = '#e300ff';
+let gridline_color = '#001a55';
 /* color of the first chart gridline */
-let gridline_zero_color = '#e0a5fe';
+let gridline_zero_color = '#001a55';
 /* axis label options */
 let y_axis_label_color = '#cc66ff';
 let axis_label_font_size = 14;

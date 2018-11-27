@@ -41,7 +41,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     line-height: normal;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -56,7 +56,7 @@ ul {
 }
 
 a {
-    color: #000000;
+    color: #000;
 
 }
 
@@ -102,8 +102,9 @@ h2 {
 }
 
 h3 {
-    font-size: 22px;
-    color: #000;
+    font-size: 30px;
+    color: #ff7f00;
+    font-weight: 550;
 }
 
 h4 {
@@ -179,6 +180,7 @@ button {
 /*=================================================
 2. Site Preloader Css Start
 ===================================================*/
+
 .site-preloader {
   background: #ff7f00;
     height: 100%;
@@ -222,27 +224,50 @@ button {
         opacity: 0;
     }
 }
+header.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: transparent;
+    width: 100%;
+    padding: 0 0px 0px;
+    border-bottom: 0px solid rgba(255, 255, 255, 0.25);
+
+}
+
+#mainHeader.header.stiky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #000;
+    border-bottom: 0px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
 
 /* ================================================
-4. Main Menu Area Start
+4. Main Menu header Area & navbar Start
 ===================================================*/
 
 // Navigation Variables
 $content-width: 1000px;
-$breakpoint: 799px;
-$nav-height: 70px;
-$nav-background: #0e0e0e;
-$nav-font-color: #ffffff;
+$breakpoint: 800px;
+$nav-height: 65px;
+$nav-background: transparent;
+$nav-font-color: #fff;
 $link-hover-color: #2582dd;
 
 // Outer navigation wrapper
 .navigation {
   height: $nav-height;
-  background: $nav-background;
+  background: transparent;
 }
 
 // Logo and branding
 .brand {
+  color: #ffffff;
   position: absolute;
   padding-left: 20px;
   float: left;
@@ -253,6 +278,7 @@ $link-hover-color: #2582dd;
   a:visited {
     color: $nav-font-color;
     text-decoration: none;
+
   }
 }
 
@@ -260,6 +286,7 @@ $link-hover-color: #2582dd;
 .nav-container {
   max-width: $content-width;
   margin: 0 auto;
+
 }
 
 // Navigation
@@ -268,7 +295,7 @@ nav {
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 5;
     li {
       float: left;
       position: relative;
@@ -292,6 +319,7 @@ nav {
       ul li {
         min-width: 190px;
         a {
+          background: #000;
           padding: 15px;
           line-height: 20px;
         }
@@ -316,21 +344,22 @@ nav {
   position: absolute;
   top: 0;
   right: 0;
-  background: #0e0e0e;
+  background: transparent;
   height: $nav-height;
   width: $nav-height;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   // Hamburger nav visible on mobile only
   .nav-mobile {
     display: block;
   }
   nav {
    width: 100%;
-    padding: $nav-height 0 15px;
+    padding: 0 0 0px;
     ul {
       display: none;
       li {
+        background: #ff7f00;
         float: none;
         a {
           padding: 15px;
@@ -354,7 +383,7 @@ nav {
 #nav-toggle {
   position: absolute;
   left: 18px;
-  top: 22px;
+  top: 10px;
   cursor: pointer;
   padding: 10px 35px 16px 0px;
   span,
@@ -399,277 +428,14 @@ article {
 }
 
 
-/*======
-break
-========*/
-
-@charset "UTF-8";
-.navigation {
-  height: 70px;
-  background: #0e0e0e;
-}
-
-.brand {
-  position: absolute;
-  padding-left: 20px;
-  float: left;
-  line-height: 70px;
-  text-transform: uppercase;
-  font-size: 1.4em;
-}
-.brand a,
-.brand a:visited {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-nav {
-  float: right;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav ul li {
-  float: left;
-  position: relative;
-}
-nav ul li a,
-nav ul li a:visited {
-  display: block;
-  padding: 0 20px;
-  line-height: 70px;
-  background: #0e0e0e;
-  color: #ffffff;
-  text-decoration: none;
-}
-nav ul li a:hover,
-nav ul li a:visited:hover {
-  background: #2581DC;
-  color: #ffffff;
-}
-nav ul li a:not(:only-child):after,
-nav ul li a:visited:not(:only-child):after {
-  padding-left: 4px;
-  content: ' ▾';
-}
-nav ul li ul li {
-  min-width: 190px;
-}
-nav ul li ul li a {
-  padding: 15px;
-  line-height: 20px;
-}
-
-.nav-dropdown {
-  position: absolute;
-  display: none;
-  z-index: 1;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Mobile navigation */
-.nav-mobile {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #0e0e0e;
-  height: 70px;
-  width: 70px;
-}
-
-@media only screen and (max-width: 798px) {
-  .nav-mobile {
-    display: block;
-  }
-
-  nav {
-    width: 100%;
-    padding: 10px 0 15px;
-  }
-  nav ul {
-    display: none;
-  }
-  nav ul li {
-    float: none;
-  }
-  nav ul li a {
-    padding: 15px;
-    line-height: 20px;
-  }
-  nav ul li ul li a {
-    padding-left: 30px;
-  }
-
-  .nav-dropdown {
-    position: static;
-  }
-}
-@media screen and (min-width: 799px) {
-  .nav-list {
-    display: block !important;
-  }
-}
-#nav-toggle {
-  position: absolute;
-  left: 18px;
-  top: 22px;
-  cursor: pointer;
-  padding: 10px 35px 16px 0px;
-}
-#nav-toggle span,
-#nav-toggle span:before,
-#nav-toggle span:after {
-  cursor: pointer;
-  border-radius: 1px;
-  height: 5px;
-  width: 35px;
-  background: #ffffff;
-  position: absolute;
-  display: block;
-  content: '';
-  transition: all 300ms ease-in-out;
-}
-#nav-toggle span:before {
-  top: -10px;
-}
-#nav-toggle span:after {
-  bottom: -10px;
-}
-#nav-toggle.active span {
-  background-color: transparent;
-}
-#nav-toggle.active span:before, #nav-toggle.active span:after {
-  top: 0;
-}
-#nav-toggle.active span:before {
-  transform: rotate(45deg);
-}
-#nav-toggle.active span:after {
-  transform: rotate(-45deg);
-}
-
-article {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-
 /* ================================================
-4. Main Menu Area Start
+4. Main Menu header Area & navbar End
 ===================================================*/
-
-.support-bar-area {
-  display: none;
-}
-
-header.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background: #0e0e0e;
-    width: 100%;
-    padding: 10 0px 30px;
-    border-bottom: 0px solid rgba(255, 255, 255, 0.25);
-
-}
-
-.navbar-light .navbar-toggler-icon {
-    color: #0e0e0e
-}
-
-.navbar-light .navbar-toggler:focus {
-    color: #0e0e0e;
-    outline: 0px;
-}
-
-#mainHeader .navbar-brand {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 30px;
-    font-family: 'Exo', sans-serif;
-}
-
-#mainHeader.header.stiky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    background: #0e0e0e;
-    border-bottom: 0px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-}
-
-#mainHeader.header .nav-link {
-    color: #004fff;
-    font-size: 15px;
-    margin-right: 10px;
-    text-transform: uppercase;
-}
-
-#mainHeader.header .nav-link.active {
-    color: #ffffff;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
-
-#mainHeader.header .nav-link:hover {
-    color: #0075ff;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
-
-#mainHeader.header .nav-item:last-child .nav-link {
-    margin-right: 0px;
-    padding-right: 0px;
-}
-
-#mainHeader .navbar-light .navbar-toggler {
-    color: #0e0e0e;
-    border: 0px;
-}
-
-#mainHeader .viewPlan a {
-    width: 140px;
-    height: 50px;
-    display: inline-block;
-    border: 2px solid #fff;
-    text-align: center;
-    line-height: 50px;
-    color: #fff;
-    text-transform: uppercase;
-    margin-left: 185px;
-    border-radius: 4px;
-}
-
-
-#mainHeader .viewPlan a:hover {
-    background: #fff;
-    border-color: #fff;
-    color: #ffffff;
-}
-
-
-/* ==============================================
-Main Menu Area Start
-================================================== */
 
 
 
 /* =============================================
-5. Welcome Area Start
+5. Welcome Area links Start
 ================================================ */
 
 #welcomeArea {
@@ -794,14 +560,14 @@ Main Menu Area Start
 
 
 /* =============================================
-Welcome Area End
+Welcome Area links End
 ================================================ */
 
 
-
+en hashrate
 
 /* ============================================
-6. About Area Start
+6. What is 0xBTC (About area) Start
 =============================================== */
 #aboutUs {
 
@@ -840,13 +606,13 @@ Welcome Area End
 }
 
 /* ============================================
-About Area End
+6. What is 0xBTC (About area) End
 =============================================== */
 
 
 
 /* ==============================================
-7. Transaction Area Start
+7. Token Stats area Start
 ================================================ */
 
 #transaction {
@@ -866,7 +632,7 @@ About Area End
 }
 
 .table tr th {
-    color: #fff;
+    color: #ff7f00;
     font-weight: 500;
     font-size: 22px;
     text-transform: uppercase;
@@ -892,8 +658,8 @@ thead {
 }
 
 .tab-content {
-    border-radius: 10px;
-    background: #d0dcf4;
+    border-radius: 0px;
+    background: #ff7f00;
     position: relative;
 }
 
@@ -905,7 +671,7 @@ thead {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #00e010;
+    background: transparent;
     z-index: -1;
     border-radius: 10px;
 }
@@ -918,7 +684,7 @@ thead {
 }
 
 .table .media p {
-    color: #000;
+    color: #fff;
     font-weight: 400;
     font-size: 16px;
 }
@@ -967,7 +733,7 @@ thead {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #000;
+    color: #fff;
     line-height: 45px;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -992,16 +758,18 @@ tbody .tr:first-child td {
 }
 
 
-
 /* ==============================================
-Transaction Area End
+7. Token Stats area End
 ================================================ */
 
+
+
 /*=================================================
-13. Investors Area Start
+13. Foundation Board members Area Start
 =================================================*/
 #investors {
-background: #000000;
+
+background: #fff;
 }
 
 #investors .heading-title h2 {
@@ -1073,7 +841,7 @@ background: #000000;
 }
 
 #investors .box .social_icon ul a:hover i {
-    background: #ffffff;
+    background: #000;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1108,7 +876,7 @@ background: #000000;
 }
 
 /*=================================================
-Investors Area End
+Foundation Board members Area End
 =================================================*/
 
 
@@ -1117,6 +885,7 @@ Investors Area End
 ================================================= */
 #investor {
 
+    background: #fff;
     padding: 123px 0px 130px;
 }
 
@@ -1175,7 +944,7 @@ Investors Area End
 ================================================= */
 
 #feature {
-  display: none;
+
     background: url(../img/featurebg.png) no-repeat center;
     background-size: cover;
     padding: 130px 0px 100px;
@@ -1288,7 +1057,7 @@ Feature Area Start
  ==================================================== */
 
 #wcu {
-    display: none;
+
     background: url(../img/whaychoseusbg.png) no-repeat bottom;
     padding: 124px 0px 102px;
 }
@@ -1371,7 +1140,7 @@ Feature Area Start
 11. Payment Method Area Start
 ===================================================== */
 #paymentMethod {
-    display: none;
+
     padding: 123px 0px 150px;
 }
 
@@ -1491,7 +1260,7 @@ Payment Method Area End
 ===================================================== */
 
 #package {
-  display: none;
+
     background: url(../img/packbg.png) no-repeat;
     padding: 123px 0px 154px;
     background-size: cover;
@@ -1762,7 +1531,7 @@ Our Package Area End
  14. FAQ Area Start
  ================================================ */
 #faq {
-    display: none;
+
     background: url(../img/faqbg.png) no-repeat bottom;
     background-size: cover;
     padding: 122px 0px 183px;
@@ -1878,7 +1647,7 @@ FAQ Area End
 15. Footer Area Start
 ====================================================*/
 #footer {
-    background: #131313;
+    background: #ff7f00;
     padding: 195px 0px 26px;
 }
 
@@ -1933,12 +1702,12 @@ FAQ Area End
 
 #footer .box2 h2 {
     font-size: 18px;
-    color: #fff;
+    color: #000;
     margin-bottom: 16px;
 }
 
 #footer .box2 ul li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: #000;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -1950,12 +1719,12 @@ FAQ Area End
 
 #footer .box3 h2 {
     font-size: 18px;
-    color: #fff;
+    color: #000;
     margin-bottom: 16px;
 }
 
 #footer .box3 ul li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: #000;;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -1964,18 +1733,18 @@ FAQ Area End
 
 #footer .box4 h2 {
     font-size: 18px;
-    color: #fff;
+    color: #000;
     margin-bottom: 16px;
 }
 
 #footer .box4 a {
     display: block;
     margin-top: 15px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #220000;
 }
 
 #footer  .copyright p{
-    color: #ffff;
+    color: #fff;
 }
 #footer  .copyright{
     border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -1993,7 +1762,7 @@ Footer Area End
 
 
 /*==================================================
-16. Click BottomToTop
+16. Click BottomToTop Start
 ====================================================*/
 .totop {
     position: fixed;
@@ -2030,3 +1799,7 @@ Footer Area End
     background: #FF4D00;
     color: #000;
 }
+
+/*==================================================
+16. Click BottomToTop End
+====================================================*/
