@@ -30,7 +30,7 @@ function to_readable_thousands(number, unit_type, decimal_count) {
 
 
 var mineable_token = new Vue({
-  el: '#mineable-token-stats',
+  el: '#aboutUs',
   data: {
     address: null,
     _eth: null,
