@@ -52,6 +52,7 @@ const routesData = {
 
     {url: '/wallet', title: 'Wallet', template: 'app/wallet.html', filename: 'wallet/index.html'},
     {url: '/foundation', title: 'Foundation', template: 'app/foundation.html', filename: 'foundation/index.html'},
+    {url: '/test', title: 'Test template', template: 'app/test.html', filename: 'test/index.html'},
   ]
 }
 
