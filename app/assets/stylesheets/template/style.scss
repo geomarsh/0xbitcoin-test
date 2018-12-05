@@ -441,7 +441,8 @@ article {
 ================================================ */
 
 #welcomeArea {
-    background: #c5cbd2 url(../img/homebg.png) no-repeat top;
+
+    background: #ff7f00;
 
 }
 
@@ -634,7 +635,7 @@ en hashrate
 }
 
 .table tr th {
-    color: #ff7f00;
+    color: transparent;
     font-weight: 500;
     font-size: 22px;
     text-transform: uppercase;
@@ -662,7 +663,9 @@ thead {
 .tab-content {
     border-radius: 0px;
     background: #ff7f00;
-    position: relative;
+    position: center;
+    display: block;
+    padding: px 0px 0px 0px;
 }
 
 .tab-content::after {
