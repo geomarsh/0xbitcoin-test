@@ -1,4 +1,5 @@
 const hashrateGraph = require("./hashrate-graph");
+const holdersGraph = require("./holders-graph");
 const tokenABI = require("./abi");
 const Eth = require('./ethjs');
 const $ = require('jquery');
@@ -230,6 +231,11 @@ var mineable_token = new Vue({
       $.getJSON('https://api.ethplorer.io/getAddressInfo/'+this.address+'?apiKey=freekey',
                 (result) => {this.contract_operations = result["countTxs"]});
       this.updateHashrateGraph();
+      this.callHoldersGraph();
     },
+    callHoldersGraph: function() {
+      console.log('hello vue');
+      holdersGraph.showHoldersGraph(this.tokens_minted);
+    }
   }
 })
