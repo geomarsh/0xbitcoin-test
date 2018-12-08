@@ -234,8 +234,7 @@ var mineable_token = new Vue({
       this.callHoldersGraph();
     },
     callHoldersGraph: function() {
-      console.log('hello vue');
-      holdersGraph.showHoldersGraph(this.tokens_minted);
+      this._token.tokensMinted().then((result) => {holdersGraph.showHoldersGraph(parseInt(result[0].toString(10)) / (10 ** this.decimals))});
     }
   }
 })
