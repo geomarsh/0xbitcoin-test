@@ -573,13 +573,14 @@ en hashrate
 6. What is 0xBTC (About area) Start
 =============================================== */
 #aboutUs {
-
+  color: #000000;
 }
 
 #aboutUs .heading-title p {
     margin-top: 0px;
     font-size: 16px;
     color: #000000;
+    background-color: #ffffff;
     margin-bottom: 42px;
 }
 
@@ -1537,10 +1538,9 @@ Our Package Area End
  ================================================ */
 #faq {
 
-    background: url(../img/faqbg.png) no-repeat bottom;
-    background-size: cover;
+    background-color: #ebebeb;
     padding: 122px 0px 183px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 2px solid #000;
 }
 
 #faq .heading-title p {
@@ -1557,7 +1557,7 @@ Our Package Area End
 
 .faq-accordian .panel-group .panel.panel-default {
     padding: 0;
-    background-color: transparent;
+    background-color: #fff;
     border: none;
     box-shadow: none;
     margin-bottom: 30px;

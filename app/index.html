@@ -208,8 +208,18 @@
 	<!--What is 0xBTC (About area) Start-->
 	<div>
 	</div>
+
+	<style>
+	body {
+	background-image: url("app/assets/img/pipe12.png");
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: center;
+	}
+	</style>
+
 	<section class="col-lg-12" id="aboutUs" class="aboutUs">
-		<div class="container">
+		<div class="container" bgcolor="#fff">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 					<div class="row justify-content-center">
@@ -230,13 +240,18 @@
 
 								<div class="panel panel-default">
 									<div class="panel-heading" id="headingOne">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-												0xBitcoin: General information</a>
-										</h4>
+										<h2 class="panel-title"><a class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+											<h3 align="top"><img width=50 height=50 align="left" src="app/assets/img/logo-white.png"></img><div align=center>0xBitcoin info</div></h3>
+											</a>
+									</h2>
 									</div>
 									<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionId">
 										<div class="panel-body">
+											<p>
+												<font size=5>Contract address</font><br> <a href="https://etherscan.io/address/0xb6ed7644c69416d67b522e20bc294a9a9b405b31"><code><font color="#004cbf">0xB6eD7644C69416d67B522e20bC294A9a9B405B31</font></code></a>
+												<br><br>
+												<font size=5>0xBitcoin contract code<br></font><a href="http://github.com/0xbitcoin"><code><font color="#004cbf">http://github.com/0xbitcoin</font></code></a>
+												<br><br>
 											<p>
 												<a style="color:#ff7f00">
 													<a href="https://0xbitcoin.org" style="color:#ff7f00">0xBitcoin (0xBTC)</a> is the first
@@ -272,47 +287,65 @@
 								</div>
 								<div class="panel panel-default">
 									<div class="panel-heading" id="headingTwo">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-												This is a test title: Click to learn
-											</a>
-										</h4>
+
+											<h2 class="panel-title"><a class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+												<h3 align="top"><img width=50 height=50 align="left" src="app/assets/img/picaxe.gif"></img><div align=center>Token Mining</div></h3>
+												</a>
+										</h2>
 									</div>
 									<div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionId">
 										<div class="panel-body">
-											Digital Marketing testing all foundational tool need inbound success. With module there no need to go
-											another day. Digital need
-											Marketing Agency all foundational tool need inbound success. With module there no need to go another day.
-											Digital Marketing
-											Agency all foundational tool need inbound success. With module there no need to go another day.
-											Digital Marketing testing all foundational tool need inbound success. With module there no need to go
-											another day. Digital need
-											Marketing Agency all foundational tool need inbound success. With module there no need to go another day.
-											Digital Marketing
-											Agency all foundational tool need inbound success. With module there no need to go another day.
+											<strong>MINING IN A NUTSHELL</strong>
+	<p>0xBitcoin is a Smart Contract on the Ethereum network, and the concept of Token Mining is patterned after Bitcoin’s distribution. Rather than solving ‘blocks’, work is issued by the contract, which also maintains a Difficulty which goes up or down depending on how often a Reward is issued. Whenever a miner submits a solution, the miner must pay a small gas fee in order to execute the Ethereum smart contract code for the mint() function. If the gas fee is too low, the solution will take too long to be mined and if difficulty is not at equilibrium then another mint() solution from another miner will likely be mined first. This renders the original miners solution invalid and the transaction will revert(). To alleviate gas fees for miners, they can instead mine into a pool. This way, the pool will then submit the solutions to the smart contract and pay a gas fee. Then the pool will typically take a small percent of the rewards and give the rest to the miner for providing the PoW solution.</p>
+	<p>The 0xBitcoin contract was deployed by Infernal_Toast at Ethereum address: <a href="https://etherscan.io/address/0x8fea1cf4845417f0525f5effca0f312a8c419a4e">0xb6ed7644c69416d67b522e20bc294a9a9b405b31</a></p>
+	<ul>
+	<li><strong>MINING IN MORE DETAIL</strong></li>
+	</ul>
+	<p>0xBitcoin’s smart contract, running on the Ethereum network, maintains a changing “Challenge” (that is generated from the previous Ethereum block hash) and an adjusting Difficulty Target. Like traditional mining, the miners use the SoliditySHA3 algorithm to solve for a Nonce value that, when hashed alongside the current Challenge and their Minting Ethereum Address, is less-than-or-equal-to the current Difficulty Target. Once a miner finds a solution that satisfies the requirements, they can submit it into the contract (calling the Mint() function). This is most often done through a mining pool. The Ethereum address that submits a valid solution first is sent the 50 0xBTC Reward.</p>
+	<p>(In the case of Pools, valid solutions that do not satisfy the full difficulty specified by the 0xBitcoin contract, but that DO satisfy the Pool’s specified Minimum Share Difficulty, get a ‘share’. When one of the Miners on that Pool finds a “Full” solution, the number of shares each miner’s address has submitted is used to calculate how much of the 50 0xBTC reward they will get. After a Reward is issued, the Challenge changes.</p>
+	<ul>
+	<li><strong>HOW DIFFICULTY ADJUSTMENT WORKS</strong></li>
+	</ul>
+	<p>A Retarget happens every <code>1024</code> rewards. In short, the Contract tries to target an Average Reward Time of about 60 times the Ethereum block time. So (at the time of this writing):</p>
+	<p><code>~13.9 seconds \* 60 = 13.9 minutes</code></p>
+	<p>If the average Reward Time is longer than that, the difficulty will decrease. If it’s shorter, it will increase. How much longer or shorter it was affects the magnitude with which the difficulty will rise/drop, to a maximum of 50%.<br />
+	* *<a href="https://0x1d00ffff.github.io/0xBTC-Stats/">Click Here</a> to visit the stats page~ (https://0x1d00ffff.github.io/0xBTC-Stats) t</p>
 										</div>
 									</div>
 								</div>
 								<div class="panel panel-default">
 									<div class="panel-heading" id="headingThree">
-										<h4 class="panel-title">
-											<a class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-												This is a test title: Click to learn
+										<h2 class="panel-title"><a class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+											<h3 align="top"><img width=65 height=65 align="left" src="app/assets/img/card.jpg"></img><div align=center>Mining Software</div></h3>
 											</a>
-										</h4>
+									</h2>
 									</div>
 									<div id="collapse3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionId">
 										<div class="panel-body">
-											Digital Marketing testing all foundational tool need inbound success. With module there no need to go
-											another day. Digital need
-											Marketing Agency all foundational tool need inbound success. With module there no need to go another day.
-											Digital Marketing
-											Agency all foundational tool need inbound success. With module there no need to go another day.
-											Digital Marketing testing all foundational tool need inbound success. With module there no need to go
-											another day. Digital need
-											Marketing Agency all foundational tool need inbound success. With module there no need to go another day.
-											Digital Marketing
-											Agency all foundational tool need inbound success. With module there no need to go another day.
+											<h3 id="mining-software-and-descriptions"><strong>MINING SOFTWARE AND DESCRIPTIONS</strong></h3>
+<em><font size="2">For the most up-to-date version info, download links, thread links and author contact information, please see <a href="https://www.reddit.com/r/0xbitcoin/comments/8o06dk/links_to_the_newestbest_miners_for_nvidia_amd/">this Thread HERE.</a> Keep up to date for the latest speed, stability and feature enhancements!</font></em>
+<h5 id="cosmic-miner-by-lttofu"><strong><a href="https://bitbucket.org/LieutenantTofu/cosmic-v3/downloads/">COSMiC Miner by LtTofu:</a></strong></h5>
+<ul>
+<li>V4.x versions are a near-total ‘Modern’ C++ rewrite/redesign for 64-bit Windows, built for speed, ease-of-use and stability. It supports nVidia/CUDA devices and Pool Mining. Solo/CPU mining both planned. Features a fully-integrated GUI, numerous optimizations assembly functions for speed (nicknamed ‘Hashburner’), and supports multiple GPUs running in a single instance since v4.1. Auto-Donation/devfee of 1.5% (default of 1.5%.) Under active development!
+ <a href="https://bitbucket.org/LieutenantTofu/cosmic-v3/downloads/"><b>-COSMiC Miner 3.4t by LtTofu:</b></a> A fork of 0xBitcoin-Miner designed for enhanced speed and less invalid shares at the Pool level. It is somewhat older and is built using a combination of NodeJS/C++/CUDA. It has versions available for 64-bit Windows and Linux and runs from a command-line interface. Comes in multiple versions with 1, 1.5 or 2% “Auto-Donation”/devfee. Not under development at this time, but still relevant.</li>
+</ul>
+<h5 id="soliditysha3miner-by-amano7"><strong><a href="https://github.com/lwYeo/SoliditySHA3Miner/releases">SoliditySha3Miner by Amano7:</a></strong></h5>
+<ul>
+<li>A Command-Line Interface miner that aims to provide functionality similar to that of “CCMiner” for other algorithms for 0xBitcoin and other ERC-918s. As such, it offers an API for integrating with Mining management software and integration with HiveOS &amp; EthOS. It also supports OpenCL devices (such as AMD cards and Intel IGPs.) Has a minimum Auto-Donation/devfee of 1.5% (with a default of 2.0%.) Under active development!</li>
+</ul>
+<h5 id="aiominer-all-in-one-gpu-miner"><strong><a href="https://aiominer.com/">AIOMiner All-In-One GPU Miner:</a></strong></h5>
+<ul>
+<li>AIOMiner is an All-In-One GPU Mining software for Windows that boasts support for over 55 different algorithms, is free to use, and eliminates the need to configure batch files through its easy to use interface.</li>
+</ul>
+<h5 id="tokenminer-by-mvis-mining-visualizer"><strong><a href="https://github.com/mining-visualizer/MVis-tokenminer/releases">TokenMiner by MVis (Mining-Visualizer):</a></strong></h5>
+<ul>
+<li>TokenMiner is based upon Genoil Ethminer and was the first to add support for OpenCL devices (AMD GPUs/APUs.) It supports CPU and Pool/Solo mining from its command-line interface (in -C or -G, -S or -P modes.) It can also mine on nVidia/CUDA cards (in OpenCL mode, albeit with lesser performance.) Has a 1% “devfee” running in Pool Mode. This miner has since been forked for compatibility with some FPGAs!</li>
+</ul>
+<h5 id="nabiki2.10.4-by-azlehria"><strong><a href="https://github.com/azlehria/nabiki">“Nabiki”/2.10.4 by Azlehria:</a></strong></h5>
+<ul>
+<li>v2.10.4 is an enhancement of the original 0xBitcoin-Miner with CUDA support added by Mikers and enhanced by Azlehria. “Nabiki” is a C++-only version, with no NodeJS code, which supports Pool Mining (just not Solo) and works on Windows 64-bit and Linux. Source code is available with pre-packaged binaries and a GUI in the works. Has a 2.5% “devfee”. Under active development!</li>
+</ul>
+~<em><font size="2">Older Miners: Older and possibly-unsupported miner versions can be found at the above link for historical purposes and specific applications- including the original NodeJS CPU miner by Infernal Toast/Zegordo, the ‘1000x’ NodeJS/C++ hybrid version of 0xBitcoin-Miner and Mikers’ enhanced CUDA builds.</font></em>
 										</div>
 									</div>
 								</div>
@@ -388,6 +421,13 @@
 										</td>
 									</tr>
 									<tr>
+										<td align="center" bgcolor="#dfdfdf">
+											<h2><font color="#000">Token Distribution</font></h2>
+												<canvas id="pie-holders" style="width:5%; height:10%;"></canvas>
+
+										</td>
+									</tr>
+									<tr>
 										<td align="left" bgcolor="#dfdfdf">
 											<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 											<div class="coinmarketcap-currency-widget" data-currencyid="2837" data-base="ETH" data-secondary="USD" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
@@ -402,12 +442,7 @@
 
 			<hr>
 
-			<div class="row justify-content-center" style="padding-top: 50px;">
-				<h2>Token Distribution</h2>
-				<canvas id="pie-holders" style="width:100%; height:50%;"></canvas>
-			</div>
 
-			<br>
 
 
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 50px;">
