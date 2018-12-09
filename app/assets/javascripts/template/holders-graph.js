@@ -11,14 +11,13 @@ function generateHoldersGraph(holders, minted) {
   colors.push('#08457e');
   colors.push('#e1a95f');
 
-console.log(holders);
   // Used to get the 'other' holders
   var sum = 0;
 
   for(var i = 0; i < holders.length; i++) {
 
     amount.push(holders[i][2]); // holders[i][2] returns 0xbtc balance
-    label_list.push(`${holders[i][0].substring(0,10)}... ${isExchange(holders[i][0])}`); // Pushes address label and a string, wallet or dex.
+    label_list.push(`#${i+1} ${holders[i][0].substring(0,10)}... ${isExchange(holders[i][0])} (${((amount[i] * 100) / minted).toFixed(3)}%)`); // Pushes address label and a string, wallet or dex.
     // holders[i][0] returns wallet address holders
     // [i][1] returns string 'dex' or 'wallet'
 
@@ -28,9 +27,9 @@ console.log(holders);
     colors.push(randomColor);
   }
 
-  // This pushes the 'Other Holders'
+  // This pushes the 'Other Wallets Total'
   amount.unshift(Math.round(minted - sum));
-  label_list.unshift('Other Wallets Total');
+  label_list.unshift(`Other Wallets Total (${((amount[0] * 100) / minted).toFixed(3)}% of Supply)`);
 
   var data = {
       datasets: [{
@@ -57,7 +56,7 @@ console.log(holders);
   });
 }
 
-async function getAPIData() {
+async function getTokenHolders() {
   return new Promise((resolve, reject) => {
       $.getJSON('http://www.whateverorigin.org/get?url='
       + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table')
@@ -67,9 +66,22 @@ async function getAPIData() {
     });
   }
 
+async function getWallets() {
+  return new Promise((resolve, reject) => {
+    $.getJSON('https://api.ethplorer.io/getTokenInfo/0xB6eD7644C69416d67B522e20bC294A9a9B405B31?apiKey=freekey', function(data) {
+    resolve(data);
+      });
+    });
+  }
+
 async function showHoldersGraph(tokensMinted) {
 
-  var tokenHolders = await getAPIData();
+  // Holds top wallets data
+  var tokenHolders = await getTokenHolders();
+
+  // Used for total wallet count representation
+  var wallets = await getWallets();
+  $('.wallets').text('Total Holders: ' + wallets.holdersCount);
 
   generateHoldersGraph(tokenHolders, tokensMinted);
 }
@@ -94,8 +106,6 @@ function isExchange(address) {
     name: 'Mercatox 2'
   },
 ];
-
-console.log(exchanges);
 
   for(var i = 0; i < exchanges.length; i++) {
     if(address == exchanges[i].address) {
