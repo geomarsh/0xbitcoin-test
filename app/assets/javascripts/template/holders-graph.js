@@ -6,8 +6,8 @@ function generateHoldersGraph(holders, minted) {
   var label_list = [];
   var colors = [];
 
-  colors.push('#ff9933');
-  colors.push('#d73b3e');
+  colors.push('#ffb869');
+  colors.push('#2ab500');
   colors.push('#08457e');
   colors.push('#e1a95f');
 
@@ -30,11 +30,15 @@ console.log(holders);
 
   // This pushes the 'Other Holders'
   amount.unshift(Math.round(minted - sum));
-  label_list.unshift('Other Holders');
+  label_list.unshift('Other Wallets Total');
 
   var data = {
       datasets: [{
         backgroundColor: colors,
+        borderColor: colors,
+        borderWidth: `0`,
+        hoverBorderWidth: `5`,
+        hoverBorderColor: colors,
         data: amount
       }],
 
@@ -56,7 +60,7 @@ console.log(holders);
 async function getAPIData() {
   return new Promise((resolve, reject) => {
       $.getJSON('http://www.whateverorigin.org/get?url='
-      + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCm8dVOKllqC&format=table')
+      + encodeURIComponent('https://bloxy.info/api/token/token_holders_list?token=0xb6ed7644c69416d67b522e20bc294a9a9b405b31&limit=100&key=ACCl2UPf2Pgqi&format=table')
       + '&callback=?', function(data) {
       resolve(JSON.parse(data.contents));
       });

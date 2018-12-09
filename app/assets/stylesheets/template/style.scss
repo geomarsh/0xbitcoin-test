@@ -32,7 +32,8 @@ Front-end developer : Mamunur Rashid
 ======================================================================*/
 /*--Google Font Import--*/
 // @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:500');
+//@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 * {
   -webkit-transition: all 1s;
@@ -44,12 +45,13 @@ body {
   padding: 0;
   overflow-x: hidden;
   line-height: normal;
-  // font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 body {
   font-weight: 400;
   color: #131313;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 ul {
@@ -60,7 +62,7 @@ ul {
 
 a {
   color: #000;
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 a,
